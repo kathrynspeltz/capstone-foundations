@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200&family=Quicksand:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap');
+
+* {
+	background: #C3D7D7;
+	max-width: 1200px;
+	margin: 10px auto;
+
+}
+
+body {
+	font-family: 'Barlow', sans-serif;
+	margin: 0px;
+}
+
+h1 {
+	background-color: #1A3837;
+	color: white;
+	padding: 25px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: center;
+	font-family: 'Arvo', serif;
+	border-radius: 20px;
+}
+
+h3 {
+	text-align: center;
+	font-family: 'Arvo', serif;
+	color: #355755;
+}
+
+.logo {
+	height: 75px;
+	float: left;
+	border-radius: 20px;
+
+}
+
+#paragraph1 {
+	text-align: center;
+	margin: 0px;
+}
+
+button {
+	background-color: #1A3837;
+	color: white;
+	padding: 10px;
+	border-radius: 30px;
+	border: 0px;
+	margin: 0px auto;
+	display: block;
+	font-family: 'Barlow', sans-serif;
+}
+
+
+
+#watercolor {
+	border-radius: 20px;
+	position: -5;
+
+
+}
+
+
+ol {
+	padding-left: 0;
+}
+
+
+
+.crumb {
+	margin-right: 2em;
+	margin: 2rem;
+	display: inline;
+}
+
+a {
+	color: #000201;
+}
+
+
+input {
+	display: block;
+	background-color: white;
+	width: 300px;
+	margin: 5px;
+	text-align: left;
+
+
+}
