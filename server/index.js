@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const { SERVER_PORT } = process.env
-const { seed, getParks } = require('./controller.js')
+const { seed, getParks, createParks } = require('./controller.js')
 
 app.use(express.json())
 app.use(cors())
@@ -13,7 +13,7 @@ app.post('/seed', seed)
 
 
 // Parks
-//app.post('/parks', createParks)
+app.post('/parks', createParks)
 app.get('/parks', getParks)
 //app.delete('/parks/:id', deleteParks)
 

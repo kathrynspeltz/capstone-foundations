@@ -44,7 +44,14 @@ module.exports = {
         sequelize.query(`select * from parks`)
             .then(dbRes => res.status(200).send(dbRes[0]))
             .catch(err => res.status(500).send(err))
-        console.log(dbRes[0])
     },
+
+    createParks: (req, res) => {
+        const { park_name, address, miles_of_trail, image_url } = req.body;
+        sequelize.query(`insert into parks (park_name, address, miles_of_trail, image_url)
+        values ('${park_name}', '${address}', ${miles_of_trail}, '${image_url}')`)
+            .then(dbRes => res.status(200).send(dbRes[0]))
+            .catch(err => res.status(500).send(err))
+    }
 
 }

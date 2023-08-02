@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200&family=Quicksand:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap');
 
+
+ul {
+	padding: 0
+}
+
 * {
-	background: #C3D7D7;
 	max-width: 1200px;
 	margin: 10px auto;
 
@@ -46,7 +50,7 @@ button {
 	background-color: #1A3837;
 	color: white;
 	padding: 10px;
-	border-radius: 30px;
+	border-radius: 20px;
 	border: 0px;
 	margin: 0px auto;
 	display: block;
@@ -67,7 +71,25 @@ ol {
 	padding-left: 0;
 }
 
+#parksContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
 
+.parkCard {
+	background: #C3D7D7;
+	color: #000201;
+	width: 300px;
+	margin: 20px;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	border-radius: 20px;
+
+}
 
 .crumb {
 	margin-right: 2em;
