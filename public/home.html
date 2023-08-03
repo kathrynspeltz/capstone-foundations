@@ -24,7 +24,7 @@
 		<h3>Top Trails</h3>
 		<style>
 			body {
-				background-image: url("https://tinyurl.com/watercolortrees2"), url("https://tinyurl.com/watercolortrees1");
+				background-image: url("https://tinyurl.com/watercolortrees1");
 				background-repeat: no-repeat;
 				background-size: auto;
 				height: 800px
@@ -33,7 +33,7 @@
 		<p id="parksContainer"></p>
 
 		<form id="addParkForm">
-			<header>Don't see a park? Add more in to our database below!</header>
+			<header>Don't see a park you enjoy? Add it to our database below!</header>
 			<label for="addParkName">Park Name</label>
 			<input type="text" id="addParkName" />
 			<label for="addParkAddress">Park Address</label>
@@ -42,19 +42,21 @@
 			<input type="number" id="addMilesofTrail" />
 			<label for="addParkURL">Image URL</label>
 			<input type="text" id="addParkURL" />
-			<button type="submit">Add Park!</button>
+			<button type="submit" id="addParkBtn">Add Park!</button>
 		</form>
 
 
 		</p>
+
 		<p>
 		</p>
 
 
 	</content>
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-	<script src="main.js"></script>
+
 
 </body>
+<script src="home.js"></script>
 
 </html>

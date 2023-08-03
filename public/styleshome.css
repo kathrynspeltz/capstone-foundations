@@ -64,7 +64,8 @@ ol {
 	padding-left: 0;
 }
 
-#parksContainer {
+#parksContainer,
+#favoritesContainer {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -85,8 +86,7 @@ ol {
 
 .park_image {
 	height: 100px;
-	border-top-left-radius: 12px;
-	border-top-right-radius: 12px;
+	border-radius: 20px;
 }
 
 .crumb {
@@ -99,11 +99,18 @@ a {
 	color: #000201;
 }
 
-.addParkForm {
+#addParkForm {
 	background: #1A3837;
+	color: aliceblue;
+	padding: 10px;
 	flex-direction: column;
-	text-align: center;
+	text-align: left;
 	align-items: center;
+}
+
+#addParkBtn {
+	background-color: #C3D7D7;
+	color: #1A3837;
 }
 
 input {
@@ -111,4 +118,5 @@ input {
 	background-color: white;
 	width: 300px;
 	margin: 5px;
+
 }
