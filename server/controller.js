@@ -15,6 +15,7 @@ module.exports = {
     seed: (req, res) => {
         sequelize.query(`
             drop table if exists parks;
+            drop table if exists favorites;
 
             create table parks (
                 park_id serial primary key, 
@@ -24,6 +25,12 @@ module.exports = {
                 image_url varchar
 
             );
+
+            create table favorites (
+                favorites_id serial primary key
+                park_id serial references favorites(park_id),
+                notes varchar
+            )
 
             insert into parks (park_name, address, miles_of_trail, image_url) values 
             ('Cuyuna Lakes', '17934 Co Rd 30, Ironton, MN 56455', 25, 'https://tinyurl.com/mnmtnbiking'),
@@ -46,11 +53,42 @@ module.exports = {
             .catch(err => res.status(500).send(err))
     },
 
+    getFavorites: (req, res) => {
+        sequelize.query(`select
+        favorites.favorite_id,
+        favorites.park_id,
+        favorites.notes,
+        parks.park_id, 
+        parks.park_name,
+        parks.address,
+        parks.miles_of_trail,
+        parks.image_url
+        from favorites join
+        parks on favorites.park_id = parks.park_id
+        `)
+            .then(dbRes => res.status(200).send(dbRes[0]))
+            .catch(err => res.status(500).send(err))
+    },
+
+    createFavorites: (req, res) => {
+        const { park_id, notes } = req.body;
+        sequelize.query(`insert into parks (park_id, notes)
+        values (${park_id}, '${notes}') returning *;`)
+            .then(dbRes => {
+                console.log(dbRes)
+                res.status(200).send(dbRes[0])
+            })
+            .catch(err => res.status(500).send(err))
+    },
+
     createParks: (req, res) => {
         const { park_name, address, miles_of_trail, image_url } = req.body;
         sequelize.query(`insert into parks (park_name, address, miles_of_trail, image_url)
-        values ('${park_name}', '${address}', ${miles_of_trail}, '${image_url}')`)
-            .then(dbRes => res.status(200).send(dbRes[0]))
+        values ('${park_name}', '${address}', ${miles_of_trail}, '${image_url}') returning *;`)
+            .then(dbRes => {
+                console.log(dbRes)
+                res.status(200).send(dbRes[0])
+            })
             .catch(err => res.status(500).send(err))
     }
 
