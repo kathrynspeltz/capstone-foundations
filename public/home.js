@@ -4,7 +4,6 @@ const addParkForm = document.getElementById('addParkForm')
 const baseURL = `http://localhost:4004`
 
 createParkCards = (parks) => {
-    console.log(parks)
     parksContainer.innerHTML = ``;
     parks.map((park) => {
         const parkCard = document.createElement("div");
@@ -12,7 +11,8 @@ createParkCards = (parks) => {
         parkCard.innerHTML = `
         <img alt='biking image' src=${park.image_url} class="park_image"/>
         <p class="park_name">${park.park_name}</p>
-        <p class="address">${park.address}</p>
+        <p class="miles_of_trail">Miles of trails: ${park.miles_of_trail}</p>
+        <p class="address">Location: ${park.address}</p>
         <div class="addToFavoritesBtn">
             <button onclick="addToFavorites(${park.park_id})"> &#x2606; Add to Favorites</button>
         </div>
@@ -22,16 +22,16 @@ createParkCards = (parks) => {
 };
 
 function addToFavorites(newFavPark) {
-    console.log(newFavPark)
     const body = {
         park_id: newFavPark,
-        notes: "Add your notes here"
+        notes: "Add your own notes below"
     };
     axios.post(`${baseURL}/favorites`, body).then(res => {
     })
 };
 
 const addPark = (newPark) => {
+    console.log(newPark)
     newPark.preventDefault();
     const body = {
         park_name: addParkName.value,
@@ -52,6 +52,7 @@ const addPark = (newPark) => {
 const getParks = () => {
     axios.get(`${baseURL}/parks`).then(res => createParkCards(res.data))
 }
+
 
 addParkForm.addEventListener("submit", addPark)
 getParks()

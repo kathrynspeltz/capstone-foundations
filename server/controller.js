@@ -35,14 +35,14 @@ module.exports = {
             );
 
             insert into parks (park_name, address, miles_of_trail, image_url) values 
-            ('Cuyuna Lakes', '17934 Co Rd 30, Ironton, MN 56455', 25, 'https://tinyurl.com/mnmtnbiking'),
-            ('Elm Creek', '1688 W Hayden Lake Rd, Champlin, MN 55316', 13, 'https://tinyurl.com/elmcreekbiking'),
-            ('Theodore Wirth', '1688 W Hayden Lake Rd, Champlin, MN 55316', 12, 'https://tinyurl.com/elmcreekbiking'),
-            ('Piedmont', '2226 Hutchinson Rd, Duluth, MN 55811', 13, 'https://tinyurl.com/mtnbikingpiedmont' ),
-            ('Lebanon Hills', '4801 Johnny Cake Ridge Rd, Eagan, MN 55122', 12, 'https://tinyurl.com/mtnbikinglebanonhills');
+            ('Cuyuna Lakes', 'Ironton, MN', 25, 'https://tinyurl.com/mnmtnbiking'),
+            ('Elm Creek', 'Champlin, MN', 13, 'https://tinyurl.com/elmcreekbiking'),
+            ('Theodore Wirth', 'Minneapolis, MN', 12, 'https://tinyurl.com/theowirthmtnbiking'),
+            ('Piedmont', 'Duluth, MN', 13, 'https://tinyurl.com/mtnbikingpiedmont' ),
+            ('Lebanon Hills', 'Eagan, MN', 12, 'https://tinyurl.com/mtnbikinglebanonhills'),
+            ('Gamehaven', 'Rochester, MN', 12, 'https://tinyurl.com/gamehavenmtnbiking');
 
-            insert into favorites (park_id, notes) values
-            (3, 'placeholder text');
+
 
 
             `).then(() => {
@@ -70,7 +70,6 @@ module.exports = {
         parks on favorites.park_id = parks.park_id;
         `)
             .then(dbRes => {
-                console.log(dbRes)
                 res.status(200).send(dbRes[0])
             })
             .catch(err => res.status(500).send(err))
@@ -81,7 +80,6 @@ module.exports = {
         sequelize.query(`insert into favorites (park_id, notes)
         values (${park_id}, '${notes}') returning *;`)
             .then(dbRes => {
-                console.log(dbRes)
                 res.status(200).send(dbRes[0])
             })
             .catch(err => res.status(500).send(err))
@@ -92,7 +90,6 @@ module.exports = {
         sequelize.query(`insert into parks (park_name, address, miles_of_trail, image_url)
         values ('${park_name}', '${address}', ${miles_of_trail}, '${image_url}') returning *;`)
             .then(dbRes => {
-                console.log(dbRes)
                 res.status(200).send(dbRes[0])
             })
             .catch(err => res.status(500).send(err))
@@ -108,9 +105,11 @@ module.exports = {
     },
 
     updateFavoritesNotes: (req, res) => {
-        const { id, updatedNotes } = req.body
-        sequelize.query(`update favorites set notes = ${updatedNotes} where favorites_id = ${id}
-        `)
+        const { id } = req.params
+        const { notes } = req.body
+        sequelize.query(`update favorites set notes = '${notes}' where favorites_id = ${id};`)
+            .then(dbRes => res.status(200).send(dbRes[0]))
+            .catch(err => res.status(500).send(err))
     }
 
 }
