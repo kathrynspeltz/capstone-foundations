@@ -40,7 +40,9 @@ module.exports = {
             ('Theodore Wirth', 'Minneapolis, MN', 12, 'https://tinyurl.com/theowirthmtnbiking'),
             ('Piedmont', 'Duluth, MN', 13, 'https://tinyurl.com/mtnbikingpiedmont' ),
             ('Lebanon Hills', 'Eagan, MN', 12, 'https://tinyurl.com/mtnbikinglebanonhills'),
-            ('Gamehaven', 'Rochester, MN', 12, 'https://tinyurl.com/gamehavenmtnbiking');
+            ('Gamehaven', 'Rochester, MN', 12, 'https://tinyurl.com/gamehavenmtnbiking'),
+            ('Tioga', 'Cohasset, MN', 25, 'https://tinyurl.com/Tiogamtnbiking'),
+            ('Movil Maze', 'Bemidji, MN', 15,'https://tinyurl.com/Tioggamtnbiking');
 
 
 

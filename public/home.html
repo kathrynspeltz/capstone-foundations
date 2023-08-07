@@ -15,43 +15,55 @@
 	</nav>
 
 	<content>
-		<div><img class="logo"
-				src="https://media.istockphoto.com/id/1069124594/vector/man-cyclist-mountain-biker.jpg?s=612x612&w=0&k=20&c=CHKpM4eCcal7TA0P0yMUf_GGACgU11O4CpvR1JksbQU=">
-			<h1>Minnesota Mountain Biking</h1>
 
-		</div>
 		<p id="firstParagraph">
-		<h3>Top Trails</h3>
-		<style>
-			body {
-				background-image: url("https://tinyurl.com/watercolortrees1");
-				background-repeat: no-repeat;
-				align-content: center;
+			<style>
+				body {
+					background-image: url("https://img.freepik.com/free-vector/watercolor-lake-scenery_23-2149159406.jpg?w=1380&t=st=1691426584~exp=1691427184~hmac=779d0152eef47e9a170b66e5c784f800bae897deb1ae66fbc97c0c83927f0b64");
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-attachment: fixed;
 
-			}
-		</style>
-		<p id="parksContainer"></p>
+				}
+			</style>
 
-		<form id="addParkForm">
-			<header>Don't see a park you enjoy? Add it to our database below!</header>
-			<label for="addParkName">Park Name</label>
-			<input type="text" id="addParkName" />
-			<label for="addParkAddress">Park Address</label>
-			<input type="text" id="addParkAddress" />
-			<label for="addMilesofTrail">Miles of Trail</label>
-			<input type="number" id="addMilesofTrail" />
-			<label for="addParkURL">Image URL</label>
-			<input type="text" id="addParkURL" />
-			<button type="submit" class="formBtn">Add Park!</button>
-		</form>
+		<div id="headerDiv">
+			<h1>Minnesota Mountain Biking
+			</h1>
+		</div>
 
 
-		</p>
 
+		<div id="openingContent">
+			<div id="welcomeHeader">
+				<h2>Welcome to the Minnesota Mountain Biking site!</h2>
+				<p>This is a community created database of favorite mountain biking parks from
+					around the state. Add parks to your "Favorites" to keep a log of you own experiences and for easy
+					access. Please explore and enjoy!</p>
+			</div>
+
+			<form id="addParkForm">
+				<header>Don't see a park you enjoy? Add it to our database below!</header>
+				<label for="addParkName">Park Name</label>
+				<input type="text" id="addParkName" />
+				<label for="addParkAddress">Park Address</label>
+				<input type="text" id="addParkAddress" />
+				<label for="addMilesofTrail">Miles of Trail</label>
+				<input type="number" id="addMilesofTrail" />
+				<label for="addParkURL">Image URL</label>
+				<input type="text" id="addParkURL" />
+				<button type="submit" class="formBtn">Add Park!</button>
+			</form>
+
+
+			</p>
+		</div>
 		<p>
+		<h3>Top Trails</h3>
+		<p id="parksContainer"></p>
 		</p>
 
-
+		<h6>Thanks for visiting Kathryn's capstone! Ride on &#128690</h6>
 	</content>
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 

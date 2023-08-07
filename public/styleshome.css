@@ -4,52 +4,60 @@
 
 
 ul {
-	padding: 0
+	padding: 0;
 }
 
 * {
-	max-width: 1200px;
 	margin: 10px auto;
 
 }
 
 body {
 	font-family: 'Lato', sans-serif;
-	font-weight: 300;
+	font-weight: 400;
 	margin: 0px;
 }
 
 h1 {
-	background-color: #1A3837;
+	background-color: #1D4927;
 	color: white;
 	padding: 25px;
 	margin-top: 0px;
 	margin-bottom: 0px;
 	text-align: center;
 	font-family: 'Arvo', serif;
-	border-radius: 20px;
+	border-top: 4px solid #39632E;
+	border-bottom: 4px solid #39632E;
+
 }
 
 h3 {
 	text-align: center;
 	font-family: 'Arvo', serif;
-	color: #355755;
+	color: #1D4927;
+	background-color: #D4E3D0;
+	width: 75%;
+	padding: 10px;
+	font-size: x-large;
+	border: 3px solid #39632E;
 }
 
-.logo {
-	height: 75px;
-	float: left;
-	border-radius: 20px;
-	padding: 7px;
-	margin: 0px
+h6 {
+	background-color: #1D4927;
+	color: white;
+	padding: 10px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: left;
+
 }
 
 .park_name {
-	font-weight: 400;
+	font-size: larger;
 }
 
 button {
-	background-color: #1A3837;
+	background-color: #1D4927;
 	color: white;
 	padding: 10px;
 	border-radius: 20px;
@@ -58,6 +66,10 @@ button {
 	display: block;
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
+}
+
+button:active {
+	transform: scale(.80);
 }
 
 p {
@@ -78,20 +90,24 @@ ol {
 }
 
 .parkCard {
-	background: #C3D7D7;
-	color: #000201;
+	background: #D4E3D0;
+	color: #1D4927;
 	width: 300px;
+	border-color: #1A3837;
+	border-width: 15px;
 	margin: 20px;
 	display: flex;
 	flex-direction: column;
 	text-align: center;
 	align-items: center;
-	border-radius: 20px;
+	border: 2px solid #39632E;
+	padding: 5px 0px;
+
 }
 
 .park_image {
 	height: 110px;
-	border-radius: 20px;
+	border: 1px solid #39632E;
 }
 
 .crumb {
@@ -104,28 +120,51 @@ a {
 	color: #000201;
 }
 
+#welcomeHeader {
+	background: #1D4927;
+	color: white;
+	padding: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 600px;
+	height: fit-content;
+	text-align: center;
+	font-size: large;
+	border: 2px solid #39632E;
+}
+
 #addParkForm,
 #addParkNotesForm {
-	background: #1A3837;
-	color: aliceblue;
+	background: #D4E3D0;
+	color: #1D4927;
 	padding: 10px;
 	flex-direction: column;
 	align-items: center;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	align-items: center;
-	width: 500px;
+	width: 400px;
+	border: 3px solid #39632E;
 }
 
-.formBtn {
-	background-color: #C3D7D7;
-	color: #1A3837;
+#openingContent {
+	flex-direction: row;
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 85%;
+	margin-bottom: 30px;
 }
+
+
+
 
 input {
 	display: block;
 	background-color: white;
+	border-width: 0px;
 	width: 300px;
 	margin: 5px;
 	display: flex;
