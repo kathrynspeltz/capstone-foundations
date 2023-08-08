@@ -46,12 +46,23 @@
 				<header>Don't see a park you enjoy? Add it to our database below!</header>
 				<label for="addParkName">Park Name</label>
 				<input type="text" id="addParkName" />
-				<label for="addParkAddress">Park Address</label>
-				<input type="text" id="addParkAddress" />
+				<div class="break"></div>
 				<label for="addMilesofTrail">Miles of Trail</label>
 				<input type="number" id="addMilesofTrail" />
+				<div class="break"></div>
 				<label for="addParkURL">Image URL</label>
 				<input type="text" id="addParkURL" />
+				<div class="break"></div>
+				<label for="addParkAddress">Park Location</label>
+				<input type="text" id="addParkAddress" />
+				<div class="break"></div>
+				<label for="addParkRegion">Select Region</label>
+				<select name="addParkRegion" id="addParkRegion">
+					<option value="Northern">Northern</option>
+					<option value="Southern">Southern</option>
+					<option value="Twin Cities/Central">Twin Cities/Central</option>
+				</select>
+				<div class="break"></div>
 				<button type="submit" class="formBtn">Add Park!</button>
 			</form>
 
@@ -59,11 +70,30 @@
 			</p>
 		</div>
 		<p>
-		<h3>Top Trails</h3>
+		<div id="header3">
+			<h3>Top Parks</h3>
+
+			<form id="sortParksForm2">
+				<header>Sort Your Parks:</header>
+				<label for="regionSelection">Select Region</label>
+				<select name="regionSelection" id="regionSelection">
+					<option value="Twin Cities/Central">Twin Cities/Central</option>
+					<option value="Northern">Northern</option>
+					<option value="Southern">Southern</option>
+				</select>
+				<label for="orderSelection">Order by</label>
+				<select name="orderSelection" id="orderSelection">
+					<option value="desc">Miles of Trail Descending</option>
+					<option value="asc">Miles of Trail Ascending</option>
+
+				</select>
+				<button type="submit" class="formBtn">Filter Parks</button>
+			</form>
+		</div>
 		<p id="parksContainer"></p>
 		</p>
 
-		<h6>Thanks for visiting Kathryn's capstone! Ride on &#128690</h6>
+		<h5>Thanks for visiting Kathryn's capstone! Ride on &#128690</h5>
 	</content>
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 

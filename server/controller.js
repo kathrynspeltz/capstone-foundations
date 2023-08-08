@@ -24,7 +24,8 @@ module.exports = {
                 park_name varchar,
                 address varchar,
                 miles_of_trail serial,
-                image_url varchar
+                image_url varchar,
+                region varchar
 
             );
 
@@ -34,18 +35,15 @@ module.exports = {
                 notes varchar
             );
 
-            insert into parks (park_name, address, miles_of_trail, image_url) values 
-            ('Cuyuna Lakes', 'Ironton, MN', 25, 'https://tinyurl.com/mnmtnbiking'),
-            ('Elm Creek', 'Champlin, MN', 13, 'https://tinyurl.com/elmcreekbiking'),
-            ('Theodore Wirth', 'Minneapolis, MN', 12, 'https://tinyurl.com/theowirthmtnbiking'),
-            ('Piedmont', 'Duluth, MN', 13, 'https://tinyurl.com/mtnbikingpiedmont' ),
-            ('Lebanon Hills', 'Eagan, MN', 12, 'https://tinyurl.com/mtnbikinglebanonhills'),
-            ('Gamehaven', 'Rochester, MN', 12, 'https://tinyurl.com/gamehavenmtnbiking'),
-            ('Tioga', 'Cohasset, MN', 25, 'https://tinyurl.com/Tiogamtnbiking'),
-            ('Movil Maze', 'Bemidji, MN', 15,'https://tinyurl.com/Tioggamtnbiking');
-
-
-
+            insert into parks (park_name, address, miles_of_trail, image_url, region) values 
+            ('Cuyuna Lakes', 'Ironton, MN', 25, 'https://tinyurl.com/mnmtnbiking', 'Northern'),
+            ('Elm Creek', 'Champlin, MN', 13, 'https://tinyurl.com/elmcreekbiking', 'Twin Cities/Central'),
+            ('Theodore Wirth', 'Minneapolis, MN', 12, 'https://tinyurl.com/theowirthmtnbiking', 'Twin Cities/Central'),
+            ('Piedmont', 'Duluth, MN', 13, 'https://tinyurl.com/mtnbikingpiedmont', 'Northern'),
+            ('Lebanon Hills', 'Eagan, MN', 12, 'https://tinyurl.com/mtnbikinglebanonhills','Twin Cities/Central'),
+            ('Gamehaven', 'Rochester, MN', 12, 'https://tinyurl.com/gamehavenmtnbiking', 'Southern'),
+            ('Tioga', 'Cohasset, MN', 25, 'https://tinyurl.com/Tiogamtnbiking', 'Northern'),
+            ('Movil Maze', 'Bemidji, MN', 15,'https://tinyurl.com/Tioggamtnbiking', 'Northern');
 
             `).then(() => {
             console.log('DB seeded!')
@@ -67,7 +65,8 @@ module.exports = {
         parks.park_name,
         parks.address,
         parks.miles_of_trail,
-        parks.image_url
+        parks.image_url,
+        parks.region
         from favorites join
         parks on favorites.park_id = parks.park_id;
         `)
@@ -88,9 +87,9 @@ module.exports = {
     },
 
     createParks: (req, res) => {
-        const { park_name, address, miles_of_trail, image_url } = req.body;
-        sequelize.query(`insert into parks (park_name, address, miles_of_trail, image_url)
-        values ('${park_name}', '${address}', ${miles_of_trail}, '${image_url}') returning *;`)
+        const { park_name, address, miles_of_trail, image_url, region } = req.body;
+        sequelize.query(`insert into parks (park_name, address, miles_of_trail, image_url, region)
+        values ('${park_name}', '${address}', ${miles_of_trail}, '${image_url}','${region}') returning *;`)
             .then(dbRes => {
                 res.status(200).send(dbRes[0])
             })
@@ -113,5 +112,4 @@ module.exports = {
             .then(dbRes => res.status(200).send(dbRes[0]))
             .catch(err => res.status(500).send(err))
     }
-
 }
