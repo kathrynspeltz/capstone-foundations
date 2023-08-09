@@ -92,6 +92,7 @@ p {
 
 ol {
 	padding-left: 0;
+	color: #1D4927;
 }
 
 #parksContainer,
@@ -133,7 +134,7 @@ a {
 	color: #000201;
 }
 
-#welcomeHeader {
+article {
 	background: #1D4927;
 	color: white;
 	padding: 20px;
@@ -145,6 +146,7 @@ a {
 	text-align: center;
 	font-size: large;
 	border: 2px solid #39632E;
+	margin: 20px 30px 20px 0px
 }
 
 #addParkForm {
@@ -158,17 +160,17 @@ a {
 	width: 400px;
 	border: 3px solid #39632E;
 	text-align: center;
-	margin: 0px
+	margin: 0px 0px 0px 20px
 }
 
-#openingContent {
+main {
 	flex-direction: row;
 	align-items: center;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	width: 85%;
-	margin: 30px 0px;
+	margin: 30px auto;
 }
 
 .break {
