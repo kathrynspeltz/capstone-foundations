@@ -3,7 +3,7 @@ const favParksContainer = document.getElementById('favoritesContainer')
 const updateFavoritesNotesForm = document.getElementById('addParkNotesForm')
 const parkSelector = document.getElementById('parkSelector')
 
-const baseURL = `http://localhost:4004`
+const baseURL = `http://3.145.133.58/`
 
 createFavParkCards = (parks) => {
     favParksContainer.innerHTML = ``;
@@ -32,7 +32,7 @@ createParksDropdownOptions = (parks) => {
 }
 
 function removeFromFavorites(id) {
-    axios.delete(`http://localhost:4004/favorites/${id}`)
+    axios.delete(`http://3.145.133.58/favorites/${id}`)
         .then(() => getFavorites())
         .catch(err => console.log(err))
 }
@@ -46,7 +46,7 @@ function updateFavoritesNotes(notes) {
         notes: notesEntry.value
     };
     console.log(notesEntry.value)
-    axios.put(`http://localhost:4004/favorites/${id}`, body)
+    axios.put(`http://3.145.133.58/favorites/${id}`, body)
         .then(res => {
             const allFavParks = getFavorites()
             createFavParkCards(allFavParks)

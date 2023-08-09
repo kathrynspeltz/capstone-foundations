@@ -1,7 +1,7 @@
 Minnesota Mountain Biking
 
 Overview
-This summer I got back into mountain biking and for my capstone project I wanted to create an easy to use, local application where users could go to find trail/park ideas and customize some of the information for themselves. I was able to achieve this project using Javascript, PosgreSQL, HTML and CSS. Minnesota Mountain Biking has a base database of parks which users can add to, filter and sort, and create their own favorites list. Once a park has been added to a users favorites, they are able to save custom notes to their personal notes section for each park.
+This summer I got back into mountain biking and for my capstone project I wanted to create an easy to use, local application where users could go to find trail/park ideas and customize some of the information for themselves. I was able to achieve this project using Javascript, PosgreSQL, HTML and CSS. Minnesota Mountain Biking has a base database of parks which users can add to, filter and sort, and create their own favorites list. Once a park has been added to a users favorites, they are able to save custom notes to their personal notes section for each park. Users can also remove a park from favorites.
 
 Tech stack
 Javascript, PosgreSQL, HTML/CSS, Express/Axios
