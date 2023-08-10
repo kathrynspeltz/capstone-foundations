@@ -3,7 +3,7 @@ const addParkForm = document.getElementById('addParkForm')
 const addToFavoritesBtn = document.getElementsByClassName('addToFavoritesBtn')
 const filterParkForm = document.getElementById('sortParksForm2')
 
-const baseURL = `http://localhost:4004`
+const baseURL = `http://3.17.152.76`
 
 createParkCards = (parks) => {
     parksContainer.innerHTML = ``;
